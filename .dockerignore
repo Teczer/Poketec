@@ -1,4 +1,63 @@
-.git
-.DS_Store
-.env
+# Dépendances
 node_modules
+.pnp
+.pnp.js
+
+# Build local (on rebuild dans Docker)
+build
+dist
+
+# Tests
+coverage
+
+# Git
+.git
+.gitignore
+
+# IDE et éditeurs
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Environnement local
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Documentation
+README.md
+install.md
+*.md
+docs
+
+# Docker (éviter la récursion)
+Dockerfile
+docker-compose.yml
+docker-compose*.yml
+.dockerignore
+
+# Cache
+.cache
+.npm
+.eslintcache
+
+# Autres
+*.log
+*.tmp
+*.temp
