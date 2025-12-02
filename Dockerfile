@@ -6,14 +6,14 @@ FROM node:18-alpine AS build
 # Définir le répertoire de travail
 WORKDIR /app
 
-# Installer pnpm globalement
-RUN corepack enable && corepack prepare pnpm@latest --activate
+# Installer pnpm globalement (version 8 pour compatibilité avec le lockfile)
+RUN corepack enable && corepack prepare pnpm@8 --activate
 
 # Copier les fichiers de dépendances
 COPY package.json pnpm-lock.yaml ./
 
 # Installer les dépendances (inclut devDependencies pour le build)
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --no-frozen-lockfile
 
 # Copier le code source
 COPY . .
