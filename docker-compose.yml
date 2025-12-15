@@ -1,18 +1,14 @@
-version: "3.8"
-
 services:
   spalliandex:
     container_name: spalliandex
     image: spalliandex:latest
-    env_file: ./.env
     build:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - ${PORT}:80
+      - "2424:80"
     environment:
-      - NODE_ENV=${NODE_ENV}
-      - PORT=${PORT}
+      - NODE_ENV=production
     restart: unless-stopped
     # Limites de mémoire pour éviter l'OOM-Killer
     deploy:
