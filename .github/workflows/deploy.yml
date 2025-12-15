@@ -23,7 +23,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: 22
           script: |
-            cd teczer-deployement/spallian-test
+            cd teczer-deployement/Poketec
             sudo git pull origin main
             sudo docker compose build
             sudo docker compose up -d
